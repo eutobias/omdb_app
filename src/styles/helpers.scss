@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+/* Variables */
+$html-font-size: 16px;
+
+$white: #FFFFFF;
+
+/* helper functions */
+@function rem($value) {
+    @return math.div($value, $html-font-size) * 1rem;
+}

@@ -1,0 +1,76 @@
+{
+    "Search": [
+      {
+        "Title": "Rogue One: A Star Wars Story",
+        "Year": "2016",
+        "imdbID": "tt3748528",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Mission: Impossible - Rogue Nation",
+        "Year": "2015",
+        "imdbID": "tt2381249",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BOTFmNDA3ZjMtN2Y0MC00NDYyLWFlY2UtNTQ4OTQxMmY1NmVjXkEyXkFqcGdeQXVyNTg4NDQ4NDY@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue",
+        "Year": "2007",
+        "imdbID": "tt0479528",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTYxNzAxNDU3Ml5BMl5BanBnXkFtZTcwMDU0ODg2MQ@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue Heroes",
+        "Year": "2022–2024",
+        "imdbID": "tt10405370",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNDA5YzYyYWEtMjk4OS00ZjA2LWI0NWEtYzhkNTQ0ZDFmZWIxXkEyXkFqcGdeQXVyNjU0NTI0Nw@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue Trader",
+        "Year": "1999",
+        "imdbID": "tt0131566",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZGVkODdhNzQtYmY2YS00OGIwLWJjNDktY2Y0NDNjYTQzOTU2XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue Agent",
+        "Year": "2022",
+        "imdbID": "tt9731386",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYjdkZjE4MzUtMzBhYy00ZGIwLWFmYmYtNzI4NzY1ZjRlYzUzXkEyXkFqcGdeQXVyMTE1MzI2NzIz._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue City",
+        "Year": "2020",
+        "imdbID": "tt10127684",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNGYxMmVlZDQtYWQ3Yy00MmNmLWI2ZDktYTEyMTJjODAyYTZmXkEyXkFqcGdeQXVyNzg5MzIyOA@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue",
+        "Year": "2020",
+        "imdbID": "tt11576124",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZWUyY2M2M2UtMGI1NC00ZjBmLWI5NDItYjQ1MThjNzgwMjhmXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Rogue Warrior: Robot Fighter",
+        "Year": "2016",
+        "imdbID": "tt4937114",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMjI1Njk0MTE1Ml5BMl5BanBnXkFtZTgwNTQ4MjM5NzE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Assassin's Creed: Rogue",
+        "Year": "2014",
+        "imdbID": "tt4117250",
+        "Type": "game",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNThlZDllZWMtM2EyMi00ZWQ1LTgyNmYtYWJmZGRkY2Q2YTE2XkEyXkFqcGdeQXVyNDMzODA1OTI@._V1_SX300.jpg"
+      }
+    ],
+    "totalResults": "333",
+    "Response": "True"
+  }
