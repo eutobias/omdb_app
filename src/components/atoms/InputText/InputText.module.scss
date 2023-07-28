@@ -1,5 +1,4 @@
 .container {
-
   .wrapper {
     border-radius: rem(4px);
     gap: rem(8px);
@@ -8,9 +7,21 @@
     align-items: center;
   }
 
+  svg {
+    width: rem(16px);
+    flex-shrink: 0;
+  }
+
   input {
     border: none;
     outline: none;
-  }
+    font-family: $font-body;
+    font-size: rem(12px);
+    color: $black;
+    flex-grow: 1;
 
+    &::placeholder {
+      color: $gray-200;
+    }
+  }
 }

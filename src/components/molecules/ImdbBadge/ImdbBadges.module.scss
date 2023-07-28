@@ -1,0 +1,8 @@
+.badge {
+  span {    
+    &:first-of-type {
+      border-color: $orange;
+      background: $orange;
+    }
+  }
+}

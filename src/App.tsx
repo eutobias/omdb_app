@@ -1,26 +1,45 @@
-import { useState } from 'react'
-import { InputText } from './components/atoms/InputText'
+import * as React from "react";
+
+import { Route, Routes } from "react-router-dom";
+import { Search } from "./pages/Search/Search";
+import { MovieDetailsSkeleton } from "./pages/MovieDetails/MovieDetailsSkeleton";
+import { PageContainer } from "./components/molecules/PageContainer";
+
+const MovieDetails = React.lazy(() =>
+  import("./pages/MovieDetails").then((module) => ({
+    default: module.MovieDetails,
+  }))
+);
+const Error404 = React.lazy(() =>
+  import("./pages/Error404").then((module) => ({
+    default: module.Error404,
+  }))
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <InputText type='text' placeholder='TESTE' />
-    </>
-  )
+    <PageContainer>
+      <Routes>
+        <Route index element={<Search />} />
+        <Route
+          path="movie/*"
+          element={
+            <React.Suspense>
+              <MovieDetails />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <React.Suspense>
+              <Error404 />
+            </React.Suspense>
+          }
+        />
+      </Routes>
+    </PageContainer>
+  );
 }
 
-export default App
+export default App;

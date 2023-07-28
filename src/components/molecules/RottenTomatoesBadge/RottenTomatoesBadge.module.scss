@@ -1,0 +1,13 @@
+.badge {
+  span {    
+    &:first-of-type {
+      border-color: $red;
+      background: $red;
+      padding: rem(2px) rem(10px);
+
+      svg {
+        height: 22px;
+      }
+    }
+  }
+}

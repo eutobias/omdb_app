@@ -1,18 +1,19 @@
 .flex {
   display: flex;
-  .col {
+  
+  &.col {
     flex-direction: column;
   }
 
-  .row {
+  &.row {
     flex-direction: row;
   }
 
-  .col-reverse {
+  &.col-reverse {
     flex-direction: column-reverse;
   }
 
-  .row-reverse {
+  &.row-reverse {
     flex-direction: row-reverse;
   }
 }

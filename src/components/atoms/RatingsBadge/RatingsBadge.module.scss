@@ -1,0 +1,33 @@
+.badges {
+  height: rem(32px);
+
+  display: inline-flex;
+  width: auto;
+  font-family: $font-body;
+  font-size: rem(12px);
+  line-height: rem(12px);
+  color: $white;
+  background: $black;
+
+  span {
+    padding: rem(8px) rem(10px);
+    display: flex;
+    align-items: center;
+
+    &:first-of-type {
+      border-style: solid;
+      border-width: 1px 0px 1px 1px;
+      border-color: $gray-100;
+      border-top-left-radius: rem(4px);
+      border-bottom-left-radius: rem(4px);
+    }
+
+    &:last-of-type {
+      border-style: solid;
+      border-width: 1px 1px 1px 0;
+      border-color: $gray-100;
+      border-top-right-radius: rem(4px);
+      border-bottom-right-radius: rem(4px);
+    }
+  }
+}
