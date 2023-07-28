@@ -1,14 +1,13 @@
 import classNames from "classnames";
-import styles from "./LikeButton.module.scss";
+import styles from "./LikeIcon.module.scss";
 import { SvgLoader } from "../SvgLoader";
 
-type LikeButtonProps = {
+type LikeIconProps = {
   className?: string;
   liked: boolean;
-  onClick: (event: React.MouseEvent<HTMLElement>, imdbID?: string) => void;
 };
 
-export const LikeButton = ({ className, liked, onClick }: LikeButtonProps) => {
+export const LikeIcon = ({ className, liked }: LikeIconProps) => {
 
   const handleClassNames = (className: string = "") => {
     return classNames(
@@ -19,8 +18,8 @@ export const LikeButton = ({ className, liked, onClick }: LikeButtonProps) => {
   };
 
   return (
-    <a href="#" className={handleClassNames(className)} onClick={onClick}>
+    <span className={handleClassNames(className)}>
       <SvgLoader file="heart_icon" />
-    </a>
+    </span>
   );
 };

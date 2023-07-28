@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Col } from "@/components/atoms/Col";
+import { SearchLoader } from "@/components/molecules/SearchLoader";
+import { SearchForm } from "@/components/molecules/SearchForm";
+import { SearchResults } from "@/components/molecules/SearchResults";
+import { useSearch } from "@/hooks/useSearch";
 
 import styles from "./Search.module.scss";
-
 import { SearchPlaceHolder } from "@/components/molecules/SearchPlaceHolder";
-import { SearchForm } from "@/components/molecules/SearchForm";
-import { useSearch } from "@/hooks/useSearch";
-import { SearchResults } from "@/components/molecules/SearchResults";
 
 export const Search = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -21,7 +21,6 @@ export const Search = () => {
   };
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event)
     setSearchValue(event.target.value);
   };
 
@@ -30,9 +29,8 @@ export const Search = () => {
       <SearchForm onSubmit={handleSubmit} onChange={handleOnChange} />
 
       {!loading && results.length === 0 && <SearchPlaceHolder />}
-
-      {loading && <>CARREGANDO...</>}
-      {!loading && results.length > 0 && (<SearchResults results={results} />)}
+      {loading && <SearchLoader />}
+      {!loading && results.length > 0 && <SearchResults results={results} />}
     </Col>
   );
 };

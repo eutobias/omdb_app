@@ -9,10 +9,12 @@ $black: #0B1014;
 $white: #ffffff;
 $gray-100: #7B8C98;
 $gray-200: #B0B0B0;
-$gray-400: rgba(25, 34, 40, 0.9);
 $gray-500: #171C21;
 $orange: #FF9B39;
 $red: #F93A1E;
+
+$overlay-mobile: rgba(25, 34, 40, 0.7);
+$overlay-desktop: rgba(25, 34, 40, 0.9);
 
 /* helper functions */
 @function rem($value) {

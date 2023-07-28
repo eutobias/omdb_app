@@ -1,0 +1,7 @@
+.search-form {
+  margin-bottom: rem(50px);
+
+  @media (max-width: 767px) {
+    margin-bottom: rem(30px);
+  }
+}

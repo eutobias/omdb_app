@@ -1,7 +1,7 @@
 import { SearchListItem } from "@/types/search";
+import { LikeIcon } from "@/components/atoms/LikeIcon";
 
 import styles from "./SearchResults.module.scss";
-import { LikeButton } from "@/components/atoms/LikeButton";
 
 type SearchResultProps = {
   results: SearchListItem[];
@@ -18,7 +18,7 @@ export const SearchResults = ({ results }: SearchResultProps) => {
     <ul className={styles["search-results"]}>
       {results.map((result, index) => {
         return (
-          <li key={index + result.imdbID}>
+          <li key={index + result.imdbID} onClick={(ev) => handleClick(ev, result.imdbID)}>
             <img
               src={result.poster}
               alt={`Poster of movie ${result.title}`}
@@ -27,7 +27,7 @@ export const SearchResults = ({ results }: SearchResultProps) => {
             <div className={styles["overlay"]}>
               <h3>{result.title}</h3>
               <p>{result.year}</p>
-              <LikeButton className={styles["like-button"]} liked={false} onClick={(ev) => handleClick(ev, result.imdbID)} />
+              <LikeIcon className={styles["like-button"]} liked={false}  />
             </div>
           </li>
         );

@@ -1,0 +1,15 @@
+.search-loader {
+  width: fit-content;
+  min-width: rem(275px);
+  background: transparent url("./dead_horse.png") no-repeat top center;
+  margin: 0 auto;
+  padding-top: rem(130px);
+  font-family: $font-body;
+  align-items: center;
+
+  p {
+    font-size: rem(16px);
+    color: $gray-100;
+    margin-bottom: rem(30px);
+  }
+}
