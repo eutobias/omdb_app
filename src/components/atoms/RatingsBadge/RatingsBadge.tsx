@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 export type RatingsBadgeProps = {
   className?: string;
-  icon: string;
+  icon?: string;
   text: string;
 };
 

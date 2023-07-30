@@ -2,6 +2,7 @@ import { SearchListItem } from "@/types/search";
 import { LikeIcon } from "@/components/atoms/LikeIcon";
 
 import styles from "./SearchResults.module.scss";
+import { useNavigate } from "react-router-dom";
 
 type SearchResultProps = {
   results: SearchListItem[];
@@ -10,8 +11,13 @@ type SearchResultProps = {
 export const SearchResults = ({ results }: SearchResultProps) => {
   if (!results?.length) return <></>;
 
+  const navigate = useNavigate();
+
   const handleClick = (event: React.MouseEvent<HTMLElement>, imdbID:string) => {
-    console.log("click", event, imdbID)
+    event.preventDefault()    
+    navigate({
+      pathname: `/movie/${imdbID}`,
+    });
   }
 
   return (

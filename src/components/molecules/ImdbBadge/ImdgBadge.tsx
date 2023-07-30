@@ -7,8 +7,8 @@ import styles from "./ImdbBadges.module.scss";
 
 type ImdbBadgeProps = {} & RatingsBadgeProps;
 
-export const ImdbBadge = ({ icon, text }: ImdbBadgeProps) => {
+export const ImdbBadge = ({ text }: ImdbBadgeProps) => {
   return (
-    <RatingsBadge className={styles["badge"]} icon={icon} text={text} />
+    <RatingsBadge className={styles["badge"]} icon="imdb_logo" text={text} />
   );
 };

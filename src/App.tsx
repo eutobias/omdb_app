@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route index element={<Search />} />
         <Route
-          path="movie/*"
+          path="movie/:id"
           element={
             <React.Suspense>
               <MovieDetails />
