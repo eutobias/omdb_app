@@ -84,4 +84,48 @@
     width: rem(360px);
     border-radius: rem(8px);
   }
+
+  
+  @media (max-width: 768px) {
+    padding: rem(30px) 0;
+
+    h2 {
+      font-size: rem(32px);
+      line-height: 1.1;
+      margin-bottom: rem(20px);
+    }
+
+    .dynamic-row {
+      flex-direction: column;
+    }
+    
+    .content-wrapper {
+      padding-right: 0;
+      order: 2;
+    }
+
+    .poster-wrapper {
+      order: 1;
+      align-items: center;
+      padding-bottom: rem(20px);
+      .poster {
+        margin: 0;
+        width: rem(200px);
+      }
+    }
+
+    
+  .details {
+    flex-direction: column;
+    .column {
+      width: auto;
+      padding-bottom: rem(30px);
+
+      h4 {
+        margin-bottom: rem(10px);
+      }
+
+    }
+  }
+  }
 }

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import styles from "./MovieDetails.module.scss";
+import { SearchLoader } from "@/components/molecules/SearchLoader";
 
 export const MovieDetails = () => {
   const navigate = useNavigate();
@@ -37,30 +38,12 @@ export const MovieDetails = () => {
 
   const handleBackButton = () => navigate(-1);
 
-  // const removeFromFavorites = () => {
-  //   if (result?.imdbID) {
-  //     storedFavorites.remove(result?.imdbID);
-  //     const items = favorites;
-  //     items.splice(items.indexOf(result?.imdbID), 1);
-  //     setFavorites(items);
-  //   }
-  // };
-
-  // const addToFavorites = () => {
-  //   if (result?.imdbID && !favorites.includes(result?.imdbID)) {
-  //     storedFavorites.add(result.imdbID);
-  //     const items = favorites;
-  //     items.push(result?.imdbID);
-  //     setFavorites(items);
-  //   }
-  // };
-
   const handleAddToFavorites = () => {
     if (!result?.imdbID) return;
 
     favorites.items.includes(result?.imdbID)
       ? favorites.remove(result?.imdbID)
-      : favorites.add(result?.imdbID)
+      : favorites.add(result?.imdbID);
   };
 
   useEffect(() => {
@@ -69,82 +52,82 @@ export const MovieDetails = () => {
     }
   }, []);
 
-
   return (
-    <Row className={styles["details-container"]}>
+    <Col className={styles["details-container"]}>
       {result && (
         <>
-          <Col className={styles["content-wrapper"]}>
-            <Button
-              className={styles["button-back"]}
-              onClick={handleBackButton}
-            >
-              <SvgLoader file="arrow_icon" />
-            </Button>
+          <Button className={styles["button-back"]} onClick={handleBackButton}>
+            <SvgLoader file="arrow_icon" />
+          </Button>
+          <Row className={styles["dynamic-row"]}>
+            <Col className={styles["content-wrapper"]}>
+              <Row className={styles["movie-info"]}>
+                <span>{result.runtime}</span>
+                <span>•</span>
+                <span>{result.released}</span>
+                <span>•</span>
+                <span className={styles["highlight"]}>{result.rated}</span>
+              </Row>
 
-            <Row className={styles["movie-info"]}>
-              <span>{result.runtime}</span>
-              <span>•</span>
-              <span>{result.released}</span>
-              <span>•</span>
-              <span className={styles["highlight"]}>{result.rated}</span>
-            </Row>
+              <h2>{result?.title}</h2>
 
-            <h2>{result?.title}</h2>
+              <Row className={styles["ratings"]}>
+                {renderImdbBadge()}
+                {renderRottenTomatoesBadge()}
+                <Button
+                  className={styles["button-like"]}
+                  onClick={handleAddToFavorites}
+                >
+                  <LikeIcon
+                    liked={favorites.items.includes(result?.imdbID)}
+                    className={styles["icon"]}
+                  />
+                  <span className="text">Add to favorites</span>
+                </Button>
+              </Row>
 
-            <Row className={styles["ratings"]}>
-              {renderImdbBadge()}
-              {renderRottenTomatoesBadge()}
-              <Button
-                className={styles["button-like"]}
-                onClick={handleAddToFavorites}
-              >
-                <LikeIcon liked={favorites.items.includes(result?.imdbID)} className={styles["icon"]} />
-                <span className="text">Add to favorites</span>
-              </Button>
-            </Row>
+              <h4>Plot</h4>
+              <p className={styles["plot"]}>{result.plot}</p>
 
-            <h4>Plot</h4>
-            <p className={styles["plot"]}>{result.plot}</p>
+              <Row className={styles["details"]}>
+                <Col className={styles["column"]}>
+                  <h4>Cast</h4>
+                  <ul>
+                    {result.actors.split(",").map((actorName) => (
+                      <li key={actorName}>{actorName}</li>
+                    ))}
+                  </ul>
+                </Col>
 
-            <Row className={styles["details"]}>
-              <Col className={styles["column"]}>
-                <h4>Cast</h4>
-                <ul>
-                  {result.actors.split(",").map((actorName) => (
-                    <li key={actorName}>{actorName}</li>
-                  ))}
-                </ul>
-              </Col>
-
-              <Col className={styles["column"]}>
-                <h4>Genre</h4>
-                <ul>
-                  {result.genre.split(",").map((genre) => (
-                    <li key={genre}>{genre}</li>
-                  ))}
-                </ul>
-              </Col>
-              <Col className={styles["column"]}>
-                <h4>Director</h4>
-                <ul>
-                  {result.director.split(",").map((directorName) => (
-                    <li key={directorName}>{directorName}</li>
-                  ))}
-                </ul>
-              </Col>
-            </Row>
-          </Col>
-          <Col>
-            <img
-              src={result.poster}
-              title={`Poster of: ${result.title}`}
-              className={styles["poster"]}
-            />
-          </Col>
+                <Col className={styles["column"]}>
+                  <h4>Genre</h4>
+                  <ul>
+                    {result.genre.split(",").map((genre) => (
+                      <li key={genre}>{genre}</li>
+                    ))}
+                  </ul>
+                </Col>
+                <Col className={styles["column"]}>
+                  <h4>Director</h4>
+                  <ul>
+                    {result.director.split(",").map((directorName) => (
+                      <li key={directorName}>{directorName}</li>
+                    ))}
+                  </ul>
+                </Col>
+              </Row>
+            </Col>
+            <Col className={styles["poster-wrapper"]}>
+              <img
+                src={result.poster}
+                title={`Poster of: ${result.title}`}
+                className={styles["poster"]}
+              />
+            </Col>
+          </Row>
         </>
       )}
-      {loading && "LOADING"}
-    </Row>
+      {loading && <SearchLoader />}
+    </Col>
   );
 };
