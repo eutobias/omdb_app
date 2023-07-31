@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
 import classNames from "classnames";
+import { ReactNode } from "react";
 
-import { ReactComponent as SearchIcon } from "../../../assets/search_icon.svg";
 import { Col } from "../Col";
 import { Row } from "../Row";
+import { SvgLoader } from "../SvgLoader";
 import styles from "./InputText.module.scss";
 
 export type InputTextProps = {
@@ -36,7 +36,7 @@ export const InputText = ({
   return (
     <Col className={handleClassNames(className)}>
       <Row className={styles["wrapper"]}>
-        <SearchIcon />
+        <SvgLoader file="search_icon" />
         <input
           id={id}
           placeholder={placeholder}

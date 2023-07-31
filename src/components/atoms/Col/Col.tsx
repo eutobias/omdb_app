@@ -6,12 +6,14 @@ export const Col = ({
   as,
   children,
   className,
+  style
 }: ColProps) => {
   return (
     <BaseContainer
       type="col"
       as={as}
       className={className}
+      style={style}
     >
       {children}
     </BaseContainer>

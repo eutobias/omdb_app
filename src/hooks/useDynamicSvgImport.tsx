@@ -9,8 +9,7 @@ export const useDynamicSvgImport = (iconName: string) => {
     setLoading(true);
     const importSvgIcon = async (): Promise<void> => {
       try {
-        const path = `../assets/${iconName}.svg`;
-        importedIconRef.current = (await import(path)).ReactComponent;
+        importedIconRef.current = (await import(`../assets/${iconName}.svg`)).ReactComponent;
       } catch (err) {
         setError(err);
         console.error(err);

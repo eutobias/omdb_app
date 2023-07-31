@@ -1,9 +1,8 @@
 import * as React from "react";
 
 import { Route, Routes } from "react-router-dom";
-import { Search } from "./pages/Search/Search";
-import { MovieDetailsSkeleton } from "./pages/MovieDetails/MovieDetailsSkeleton";
 import { PageContainer } from "./components/molecules/PageContainer";
+import { Search } from "./pages/Search/Search";
 
 const MovieDetails = React.lazy(() =>
   import("./pages/MovieDetails").then((module) => ({

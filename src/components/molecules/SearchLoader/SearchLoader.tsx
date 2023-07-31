@@ -1,13 +1,16 @@
-import { Col } from "@/components/atoms/Col"
-import styles from "./SearchLoader.module.scss"
-import { Loader } from "@/components/atoms/Loader/Loader"
+import { Col } from "@/components/atoms/Col";
+import { Loader } from "@/components/atoms/Loader/Loader";
 
-type SearchLoaderProps = {}
+import bgImage from "@/assets/dead_horse.png";
+import styles from "./SearchLoader.module.scss";
 
 export const SearchLoader = () => {
   return (
-    <Col className={styles["search-loader"]}>
+    <Col
+      className={styles["search-loader"]}
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
       <Loader />
     </Col>
-  )
-}
+  );
+};

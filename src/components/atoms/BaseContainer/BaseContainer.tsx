@@ -7,8 +7,9 @@ type ContainerType = "row" | "col" | "col-reverse" | "row-reverse"
 export type BaseContainerProps = {
   as?: keyof JSX.IntrinsicElements;
   className?: string;
-  type?: ContainerType;
   children?: ReactNode | undefined
+  style?: React.DetailedHTMLProps<React.StyleHTMLAttributes<HTMLStyleElement>, HTMLStyleElement>;
+  type?: ContainerType;
 } & HTMLAttributes<HTMLFormElement>
 
 export const BaseContainer = ({
@@ -16,6 +17,7 @@ export const BaseContainer = ({
   className = "",
   children,
   type = "row",
+  style
 }: BaseContainerProps) => {
   const CustomTag: keyof JSX.IntrinsicElements = as;
 
@@ -33,6 +35,7 @@ export const BaseContainer = ({
   return (
     <CustomTag
       className={handleClassNames(className)}
+      style={style}
     >
       {children}
     </CustomTag>

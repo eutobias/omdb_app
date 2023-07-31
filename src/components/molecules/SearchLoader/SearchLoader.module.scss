@@ -1,11 +1,13 @@
 .search-loader {
   width: fit-content;
   min-width: rem(275px);
-  background: transparent url("./dead_horse.png") no-repeat top center;
   margin: 0 auto;
   padding-top: rem(130px);
   font-family: $font-body;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: rem(275px) auto;
+  background-position: top center;
 
   p {
     font-size: rem(16px);

@@ -13,7 +13,7 @@ const MockInput = ({
   const [value, setValue] = useState(defaultValue);
   const handleOnChange = (event:React.SyntheticEvent<HTMLInputElement>) => setValue(event.currentTarget.value);
 
-  return <InputText placeholder={placeholder} onChange={handleOnChange} />;
+  return <InputText placeholder={placeholder} value={value} onChange={handleOnChange} />;
 };
 
 describe("InputText", () => {
@@ -23,6 +23,6 @@ describe("InputText", () => {
     const input = screen.getByPlaceholderText("test-input");
     fireEvent.change(input, { target: { value: "testando..." } });
 
-    expect(input.value).toBe("testando...");
+    expect((input as HTMLInputElement).value).toBe("testando...");
   });
 });

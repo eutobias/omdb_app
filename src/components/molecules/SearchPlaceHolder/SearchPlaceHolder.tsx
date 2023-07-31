@@ -1,29 +1,30 @@
-import top500Movies from "@/data/top500.json";
-import { Col } from "@/components/atoms/Col"
 import { Button } from "@/components/atoms/Button";
+import { Col } from "@/components/atoms/Col";
 import { createSearchParams, useNavigate } from "react-router-dom";
 
-import styles from "./SearchPlaceHolder.module.scss"
+import top500Movies from "@/data/top500.json";
+import bgImage from "@/assets/dead_horse.png";
 
-type SearchPlaceHolderProps = {}
+import styles from "./SearchPlaceHolder.module.scss";
 
 export const SearchPlaceHolder = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const suggestMovie = () => {
-    const index = Math.floor(Math.random() * top500Movies.length)
+    const index = Math.floor(Math.random() * top500Movies.length);
 
     navigate({
       pathname: "/",
       search: `?${createSearchParams({ q: top500Movies[index] })}`,
     });
-  }
+  };
 
   return (
-    <Col className={styles["search-placeholder"]}>
+    <Col className={styles["search-placeholder"]} style={{backgroundImage: `url(${bgImage})`}}>
       <h3>Don't know what to search?</h3>
-      <Button onClick={suggestMovie} className={styles["suggestion-button"]}>Here's an offer you can't refuse</Button>
+      <Button onClick={suggestMovie} className={styles["suggestion-button"]}>
+        Here's an offer you can't refuse
+      </Button>
     </Col>
-  )
-}
+  );
+};
