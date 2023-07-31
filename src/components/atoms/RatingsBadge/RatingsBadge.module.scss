@@ -17,7 +17,7 @@
     &:first-of-type {
       border-style: solid;
       border-width: 1px 0px 1px 1px;
-      border-color: $gray-100;
+      border-color: $gray-500;
       border-top-left-radius: rem(4px);
       border-bottom-left-radius: rem(4px);
     }
@@ -25,7 +25,7 @@
     &:last-of-type {
       border-style: solid;
       border-width: 1px 1px 1px 0;
-      border-color: $gray-100;
+      border-color: $gray-500;
       border-top-right-radius: rem(4px);
       border-bottom-right-radius: rem(4px);
     }

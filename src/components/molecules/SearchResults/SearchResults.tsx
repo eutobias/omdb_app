@@ -1,8 +1,9 @@
-import { SearchListItem } from "@/types/search";
 import { LikeIcon } from "@/components/atoms/LikeIcon";
+import { SearchListItem } from "@/types/search";
 
-import styles from "./SearchResults.module.scss";
+import { useFavorites } from "@/hooks/useStoreFavorites";
 import { useNavigate } from "react-router-dom";
+import styles from "./SearchResults.module.scss";
 
 type SearchResultProps = {
   results: SearchListItem[];
@@ -12,6 +13,7 @@ export const SearchResults = ({ results }: SearchResultProps) => {
   if (!results?.length) return <></>;
 
   const navigate = useNavigate();
+  const favorites = useFavorites();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>, imdbID:string) => {
     event.preventDefault()    
@@ -33,7 +35,7 @@ export const SearchResults = ({ results }: SearchResultProps) => {
             <div className={styles["overlay"]}>
               <h3>{result.title}</h3>
               <p>{result.year}</p>
-              <LikeIcon className={styles["like-button"]} liked={false}  />
+              <LikeIcon className={styles["like-button"]} liked={favorites.items.includes(result.imdbID)}  />
             </div>
           </li>
         );

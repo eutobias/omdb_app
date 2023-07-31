@@ -1,24 +1,22 @@
-import { useEffect, useState } from "react";
 import { Col } from "@/components/atoms/Col";
-import { SearchLoader } from "@/components/molecules/SearchLoader";
 import { SearchForm } from "@/components/molecules/SearchForm";
+import { SearchLoader } from "@/components/molecules/SearchLoader";
 import { SearchResults } from "@/components/molecules/SearchResults";
 import { useSearch } from "@/hooks/useSearch";
+import { useEffect, useState } from "react";
 
-import styles from "./Search.module.scss";
 import { SearchPlaceHolder } from "@/components/molecules/SearchPlaceHolder";
-import {
-  Route,
-  Routes,
-  createSearchParams,
-  useNavigate,
-} from "react-router-dom";
 import { useQueryString } from "@/hooks/useQueryString";
+import {
+  createSearchParams,
+  useNavigate
+} from "react-router-dom";
+import styles from "./Search.module.scss";
 
 export const Search = () => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState<string>("");
-  const { search, loading, results } = useSearch();
+  const { search, reset, loading, results } = useSearch();
 
   let query = useQueryString();
 
@@ -40,9 +38,11 @@ export const Search = () => {
   useEffect(() => {
     const q = query.get("q")
     setSearchValue(q || "")
-    if (q) {
+    
+    if (q)
       search(q);
-    }
+    else
+      reset()
 
   }, [query])
 

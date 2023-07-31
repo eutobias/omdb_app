@@ -1,0 +1,87 @@
+.details-container {
+  font-family: $font-body;
+  font-size: rem(16px);
+  line-height: rem(20px);
+  font-weight: 400;
+  color: $white;
+
+  .content-wrapper {
+    padding-right: rem(50px);
+  }
+
+  .button-back {
+    margin-bottom: rem(10px);
+  }
+
+  .movie-info {
+    color: $gray-100;
+    gap: rem(4px);
+    align-items: center;
+    margin-bottom: rem(10px);
+
+    .highlight {
+      font-size: rem(12px);
+      font-weight: 700;
+      color: $gray-600;
+      text-transform: uppercase;
+      background: $gray-100;
+      border-radius: rem(4px);
+      padding: rem(6px) rem(4px);
+    }
+  }
+
+  .ratings {
+    gap: rem(10px);
+    margin-bottom: rem(40px);
+    .button-like {
+      display: flex;
+      align-items: center;
+      line-height: rem(16px);
+      border: 1px solid $gray-500;
+      border-radius: rem(4px);
+      gap: rem(8px);
+      padding: 0 rem(8px);
+      .icon {
+        padding: 0;
+      }
+
+      svg {
+        path:last-of-type {
+          fill: $gray-100;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: rem(60px);
+    line-height: rem(80px);
+    font-weight: 700;
+    color: $white;
+    margin-bottom: rem(10px);
+  }
+
+  .plot {
+    margin-bottom: rem(40px);
+  }
+
+  h4 {
+    color: $gray-100;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    width: 100%;
+    justify-content: space-between;
+
+    .column {
+      width: 30%;
+    }
+  }
+
+  .poster {
+    margin-top: rem(70px);
+    width: rem(360px);
+    border-radius: rem(8px);
+  }
+}

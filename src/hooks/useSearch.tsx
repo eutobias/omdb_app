@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 type UseSearchReturn = {
   search: (query: string) => void;
+  reset: () => void;
   loading: boolean;
   results: SearchListItem[];
 };
@@ -22,8 +23,7 @@ export const useSearch = (): UseSearchReturn => {
   const [state, setState] = useState<UseSearchState>(initialState);
 
   useMemo(() => {
-    if(!state.query)
-      return
+    if (!state.query) return;
 
     const fetch = async () => {
       const results = await omdbApi.search(state.query);
@@ -35,7 +35,7 @@ export const useSearch = (): UseSearchReturn => {
       }));
     };
 
-    fetch()
+    fetch();
   }, [state.query]);
 
   const search = async (query: string) => {
@@ -46,5 +46,12 @@ export const useSearch = (): UseSearchReturn => {
     }));
   };
 
-  return { search, loading: state.loading, results: state.results };
+  const reset = () => {
+    setState((state) => ({
+      ...state,
+      results: [],
+    }));
+  };
+
+  return { search, reset, loading: state.loading, results: state.results };
 };
